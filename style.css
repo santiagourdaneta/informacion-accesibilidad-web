@@ -1,0 +1,423 @@
+/* --- Mobile-First: Empezamos con cómo se ve en el teléfono --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    /* Colores Base */
+    --color-primary: #2c3e50; /* Azul oscuro para texto y elementos principales */
+    --color-secondary: #34495e; /* Un tono más oscuro */
+    --color-accent: #3498db; /* Azul brillante para acentos y botones */
+    --color-accent-dark: #2980b9; /* Azul más oscuro para hover */
+    --color-bg-light: #ecf0f1; /* Fondo muy claro */
+    --color-bg-main: #ffffff; /* Fondo principal de tarjetas/secciones */
+    --color-text-dark: #333333; /* Texto principal oscuro */
+    --color-text-light: #fefefe; /* Texto claro */
+    --color-border: #bdc3c7; /* Borde suave */
+    --color-shadow-light: rgba(0, 0, 0, 0.08); /* Sombra ligera */
+    --color-shadow-medium: rgba(0, 0, 0, 0.15); /* Sombra media */
+
+    /* Colores de Estado / Feedback */
+    --color-info: #2196F3; /* Azul para info/tips */
+    --color-warning: #FFC107; /* Naranja para advertencias */
+    --color-error: #F44336; /* Rojo para errores graves */
+    --color-success: #4CAF50; /* Verde para éxito */
+
+    /* Tipografía */
+    --font-family-base: 'Inter', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+}
+
+body {
+    font-family: var(--font-family-base);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    margin: 0;
+    padding: 20px; /* Más padding general */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    line-height: var(--line-height-base);
+    font-size: var(--font-size-base);
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 20px 15px; /* Más padding */
+    width: 100%;
+    text-align: center;
+    border-radius: 10px; /* Más redondeado */
+    box-shadow: 0 6px 12px var(--color-shadow-medium); /* Sombra más pronunciada */
+    margin-bottom: 30px; /* Más espacio abajo */
+}
+
+h1 {
+    font-size: 2em; /* Tamaño del título para móvil */
+    margin: 0;
+    font-weight: 700; /* Negrita para el título */
+    color: #fff;
+}
+
+p{
+    
+    color: #000;
+}
+
+li{
+    
+    color: #000;
+}
+
+
+
+main {
+    flex-grow: 1; /* Para que ocupe todo el espacio disponible */
+    width: 100%;
+    max-width: 600px; /* No queremos que sea muy ancha en pantallas grandes */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.informacion-extra {
+    background-color: var(--color-bg-main);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--color-shadow-light);
+    margin-bottom: 30px;
+}
+
+.informacion-extra h2 {
+    font-size: 1.6em;
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+.informacion-extra h3 {
+    font-size: 1.3em;
+    color: var(--color-primary);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.informacion-extra p {
+    margin-bottom: 10px;
+}
+
+.informacion-extra ul {
+    list-style: disc; /* Puntos para la lista */
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+.informacion-extra ul li {
+    margin-bottom: 5px;
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+.instrucciones p {
+    font-size: 1em;
+    line-height: 1.5; /* Espacio entre líneas */
+    margin-bottom: 20px;
+}
+
+.input-grupo {
+    display: flex;
+    flex-direction: column; /* La etiqueta y la caja de texto una encima de la otra */
+    gap: 8px; /* Espacio entre ellas */
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.95em;
+    text-align: left; /* Alineamos el texto a la izquierda para que sea fácil de leer */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 14px; /* Más padding para facilitar el toque */
+    border: 1px solid var(--color-border);
+    border-radius: 8px; /* Más redondeado */
+    font-size: 1.1em; /* Texto más grande en el input */
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+    outline: none; /* Quitamos el outline por defecto */
+    border-color: var(--color-accent); /* Borde acentuado al enfocar */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3); /* Sombra de foco más suave */
+}
+
+/* ¡IMPORTANTE: Botón para "Una Mano" - cerca del pulgar! */
+button {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    padding: 16px 25px; /* Más padding para facilitar el toque */
+    border: none;
+    border-radius: 8px; /* Más redondeado */
+    font-size: 1.2em; /* Texto más grande en el botón */
+    cursor: pointer;
+    width: 100%;
+    max-width: 380px; /* Un poco más ancho para mejor toque */
+    display: block;
+    margin: 0 auto; /* Centramos el botón */
+    box-shadow: 0 4px 8px var(--color-shadow-medium);
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    font-weight: 600; /* Texto más negrita */
+    position: relative; /* Para el spinner */
+    overflow: hidden; /* Para que el spinner no se salga */
+}
+
+button:hover {
+    background-color: var(--color-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px var(--color-shadow-medium);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px var(--color-shadow-light);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.4); /* Anillo de foco claro */
+}
+
+/* Oculta el botón de "Nueva Auditoría" al inicio */
+button#nuevaAuditoriaBtn.hidden {
+    display: none;
+}
+
+.resultados h2 {
+    font-size: 1.6em;
+    color: var(--color-primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-border);
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+#resultadosContainer {
+    min-height: 120px; /* Un poco más de espacio */
+    background-color: var(--color-bg-light);
+    padding: 20px; /* Más padding */
+    border-radius: 8px;
+    border: 1px dashed var(--color-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar el mensaje si no hay resultados */
+    align-items: center;
+}
+
+.mensaje-bienvenida, .mensaje-cargando, .mensaje-error, .mensaje-info {
+    text-align: center;
+    font-style: italic;
+    color: var(--color-text-dark);
+    padding: 10px; /* Añade padding para mejor lectura */
+    border-radius: 5px;
+}
+
+.mensaje-cargando {
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Spinner de carga (UX) */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: var(--color-accent);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.mensaje-error {
+    color: var(--color-error);
+    background-color: rgba(244, 67, 54, 0.1); /* Fondo suave */
+    border: 1px solid var(--color-error);
+}
+
+.mensaje-info {
+    color: var(--color-info);
+    background-color: rgba(33, 150, 243, 0.1);
+    border: 1px solid var(--color-info);
+}
+
+.problema-item {
+    background-color: var(--color-bg-main); /* Fondo blanco para cada item */
+    border: 1px solid var(--color-border);
+    color: var(--color-text-dark);
+    padding: 15px;
+    margin-bottom: 12px; /* Más espacio entre items */
+    border-radius: 8px; /* Más redondeado */
+    font-size: 0.95em;
+    box-shadow: 0 2px 5px var(--color-shadow-light);
+    display: flex; /* Para poner icono al lado del texto */
+    align-items: flex-start; /* Alinea el icono arriba */
+    gap: 10px; /* Espacio entre icono y texto */
+}
+
+.problema-item:last-child {
+    margin-bottom: 0;
+}
+
+.problema-item strong {
+    font-weight: 700;
+    flex-shrink: 0; /* Para que el icono no se encoja */
+}
+
+/* Iconos para los tipos de problema (UX) */
+.problema-item::before {
+    font-family: 'Arial', sans-serif; /* Puedes usar Font Awesome si lo importas */
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1;
+    margin-right: 5px;
+}
+
+.problema-item.advertencia {
+    background-color: rgba(255, 193, 7, 0.1); /* Amarillo suave */
+    border-color: var(--color-warning);
+    color: var(--color-warning);
+}
+.problema-item.advertencia strong { color: var(--color-warning); }
+.problema-item.advertencia::before { content: '⚠️'; } /* Emoji de advertencia */
+
+
+.problema-item.error {
+    background-color: rgba(244, 67, 54, 0.1); /* Rojo suave */
+    border-color: var(--color-error);
+    color: var(--color-error);
+}
+.problema-item.error strong { color: var(--color-error); }
+.problema-item.error::before { content: '❌'; } /* Emoji de error */
+
+.problema-item.mejora {
+    background-color: rgba(76, 175, 80, 0.1); /* Verde suave */
+    border-color: var(--color-success);
+    color: var(--color-success);
+}
+.problema-item.mejora strong { color: var(--color-success); }
+.problema-item.mejora::before { content: '💡'; } /* Emoji de idea */
+
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    padding: 20px;
+    font-size: 0.85em;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-main);
+    border-radius: 10px;
+    box-shadow: 0 -4px 8px var(--color-shadow-light);
+}
+
+/* --- Adaptación para pantallas más grandes (Tablets y Laptops) --- */
+@media (min-width: 600px) {
+    header {
+        padding: 30px 40px;
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    main {
+        padding: 35px;
+        margin: 30px auto;
+        max-width: 750px; /* Más ancho para tablets */
+    }
+
+    .instrucciones p {
+        font-size: 1.05em;
+    }
+
+    .input-grupo {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px; /* Más espacio */
+    }
+
+    label {
+        min-width: 160px; /* Un poco más de ancho para la etiqueta */
+        font-size: 1em;
+    }
+
+    input[type="text"] {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+
+    button {
+        padding: 18px 30px;
+        font-size: 1.3em;
+        max-width: 420px; /* Botón más ancho en tablets */
+        margin-top: 25px;
+    }
+
+    .resultados h2 {
+        font-size: 1.8em;
+    }
+
+    #resultadosContainer {
+        min-height: 150px;
+        padding: 25px;
+    }
+
+    .problema-item {
+        padding: 18px;
+        font-size: 1em;
+    }
+
+    .informacion-extra {
+        padding: 30px;
+    }
+
+    .informacion-extra h2 {
+        font-size: 1.8em;
+    }
+
+    .informacion-extra h3 {
+        font-size: 1.4em;
+    }
+}
+
+/* --- Adaptación para pantallas de PC grandes --- */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3.5em;
+    }
+    main {
+        padding: 40px;
+        max-width: 900px; /* Hacemos el contenido un poco más ancho en monitores grandes */
+    }
+    button {
+        max-width: 480px; /* Botón más ancho */
+    }
+    .informacion-extra h2 {
+        font-size: 2em;
+    }
+}
